@@ -1,0 +1,509 @@
+{
+  "number": 1,
+  "phase": "Acumulación — Fuerza Base",
+  "generatedAt": "2026-04-21T00:00:00Z",
+  "generatedBy": "seed",
+  "aiNotes": "Semana inicial de referencia. Cargas conservadoras para establecer baselines de RPE y detectar debilidades reales. Grip y zona media son prioridades secundarias de esta fase.",
+  "days": [
+    {
+      "id": "w1-d1",
+      "dayOfWeek": "monday",
+      "order": 1,
+      "name": "Fuerza Inferior A",
+      "focus": ["squat", "posterior", "core"],
+      "estimatedMinutes": 75,
+      "blocks": [
+        {
+          "id": "w1-d1-b1",
+          "type": "strength",
+          "order": 1,
+          "label": "Fuerza Principal",
+          "exercises": [
+            {
+              "id": "w1-d1-e1",
+              "name": "Back Squat",
+              "type": "strength",
+              "isAnchor": true,
+              "targetSets": 4,
+              "targetReps": "5",
+              "targetWeightKg": 100,
+              "targetRPE": 7,
+              "restSeconds": 180,
+              "loadPercent1RM": 75,
+              "notes": "Pausa 1s en el fondo. Codos adelante.",
+              "progressionKey": "back_squat",
+              "sets": []
+            },
+            {
+              "id": "w1-d1-e2",
+              "name": "Romanian Deadlift",
+              "type": "strength",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "8",
+              "targetWeightKg": 80,
+              "targetRPE": 7,
+              "restSeconds": 120,
+              "loadPercent1RM": null,
+              "notes": "Bisagra limpia, no redondear espalda.",
+              "progressionKey": "romanian_deadlift",
+              "sets": []
+            }
+          ]
+        },
+        {
+          "id": "w1-d1-b2",
+          "type": "accessory",
+          "order": 2,
+          "label": "Accesorios + Core",
+          "exercises": [
+            {
+              "id": "w1-d1-e3",
+              "name": "Leg Press",
+              "type": "hypertrophy",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "12",
+              "targetWeightKg": 120,
+              "targetRPE": 8,
+              "restSeconds": 90,
+              "loadPercent1RM": null,
+              "notes": null,
+              "progressionKey": "leg_press",
+              "sets": []
+            },
+            {
+              "id": "w1-d1-e4",
+              "name": "Ab Wheel Rollout",
+              "type": "accessory",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "10",
+              "targetWeightKg": 0,
+              "targetRPE": 8,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "Zona media prioritaria. Pelvis neutra.",
+              "progressionKey": "ab_wheel",
+              "sets": []
+            }
+          ]
+        }
+      ],
+      "metcon": {
+        "id": "w1-d1-metcon",
+        "format": "AMRAP",
+        "durationMinutes": 12,
+        "label": "Pump & Breathe",
+        "focusArea": "capacidad aeróbica + piernas",
+        "movements": [
+          { "name": "Air Squat", "reps": 15, "load": null, "notes": null },
+          { "name": "Push-up", "reps": 10, "load": null, "notes": null },
+          { "name": "Box Jump (60cm)", "reps": 5, "load": null, "notes": null }
+        ],
+        "result": { "rounds": null, "partialReps": null },
+        "progressionKey": "metcon_pump_breathe",
+        "scoringNote": "Contar rondas + reps parciales. Objetivo: >6 rondas."
+      }
+    },
+    {
+      "id": "w1-d2",
+      "dayOfWeek": "tuesday",
+      "order": 2,
+      "name": "Olímpico + Empuje",
+      "focus": ["clean", "press", "explosividad"],
+      "estimatedMinutes": 80,
+      "blocks": [
+        {
+          "id": "w1-d2-b1",
+          "type": "olympic",
+          "order": 1,
+          "label": "Técnica Olímpica",
+          "exercises": [
+            {
+              "id": "w1-d2-e1",
+              "name": "Power Clean",
+              "type": "olympic",
+              "isAnchor": true,
+              "targetSets": 5,
+              "targetReps": "3",
+              "targetWeightKg": 70,
+              "targetRPE": 7,
+              "restSeconds": 150,
+              "loadPercent1RM": 70,
+              "notes": "Tirar desde el suelo. Sin recibir en sentadilla profunda.",
+              "progressionKey": "power_clean",
+              "sets": []
+            },
+            {
+              "id": "w1-d2-e2",
+              "name": "Hang Power Clean",
+              "type": "olympic",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "3",
+              "targetWeightKg": 60,
+              "targetRPE": 6,
+              "restSeconds": 120,
+              "loadPercent1RM": null,
+              "notes": "Foco en la segunda palanca.",
+              "progressionKey": "hang_power_clean",
+              "sets": []
+            }
+          ]
+        },
+        {
+          "id": "w1-d2-b2",
+          "type": "strength",
+          "order": 2,
+          "label": "Empuje Superior",
+          "exercises": [
+            {
+              "id": "w1-d2-e3",
+              "name": "Press Banca",
+              "type": "strength",
+              "isAnchor": true,
+              "targetSets": 4,
+              "targetReps": "6",
+              "targetWeightKg": 85,
+              "targetRPE": 7,
+              "restSeconds": 150,
+              "loadPercent1RM": 75,
+              "notes": null,
+              "progressionKey": "bench_press",
+              "sets": []
+            },
+            {
+              "id": "w1-d2-e4",
+              "name": "Dips (lastrado)",
+              "type": "hypertrophy",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "10",
+              "targetWeightKg": 15,
+              "targetRPE": 8,
+              "restSeconds": 90,
+              "loadPercent1RM": null,
+              "notes": null,
+              "progressionKey": "weighted_dips",
+              "sets": []
+            }
+          ]
+        },
+        {
+          "id": "w1-d2-b3",
+          "type": "grip",
+          "order": 3,
+          "label": "Grip",
+          "exercises": [
+            {
+              "id": "w1-d2-e5",
+              "name": "Dead Hang",
+              "type": "grip",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "30s",
+              "targetWeightKg": 0,
+              "targetRPE": 7,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "Registrar tiempo en segundos. Objetivo semana 1: 30s x3.",
+              "progressionKey": "dead_hang",
+              "sets": []
+            }
+          ]
+        }
+      ],
+      "metcon": {
+        "id": "w1-d2-metcon",
+        "format": "EMOM",
+        "durationMinutes": 10,
+        "label": "Clean Complex EMOM",
+        "focusArea": "potencia + lactato",
+        "movements": [
+          { "name": "Power Clean", "reps": 3, "load": "50kg", "notes": "Técnica limpia, no RPE alto" },
+          { "name": "Push-up", "reps": 5, "load": null, "notes": null }
+        ],
+        "result": { "completedMinutes": null, "totalMinutes": 10 },
+        "progressionKey": "metcon_clean_emom",
+        "scoringNote": "Completar cada minuto limpio. Registrar cuántos minutos se completaron."
+      }
+    },
+    {
+      "id": "w1-d3",
+      "dayOfWeek": "wednesday",
+      "order": 3,
+      "name": "CrossFit — Benchmark",
+      "focus": ["capacidad", "fuerza resistencia", "benchmark"],
+      "estimatedMinutes": 60,
+      "blocks": [
+        {
+          "id": "w1-d3-b1",
+          "type": "explosive",
+          "order": 1,
+          "label": "Activación",
+          "exercises": [
+            {
+              "id": "w1-d3-e1",
+              "name": "Box Jump",
+              "type": "explosive",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "5",
+              "targetWeightKg": 0,
+              "targetRPE": 6,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "60cm. Aterrizaje controlado.",
+              "progressionKey": "box_jump",
+              "sets": []
+            }
+          ]
+        }
+      ],
+      "metcon": {
+        "id": "w1-d3-metcon",
+        "format": "FOR_TIME",
+        "durationMinutes": 20,
+        "label": "FRAN",
+        "focusArea": "fuerza resistencia clásica",
+        "movements": [
+          { "name": "Thruster 21", "reps": 21, "load": "43kg", "notes": "No descansar con la barra en el suelo" },
+          { "name": "Pull-up 21", "reps": 21, "load": null, "notes": null },
+          { "name": "Thruster 15", "reps": 15, "load": "43kg", "notes": null },
+          { "name": "Pull-up 15", "reps": 15, "load": null, "notes": null },
+          { "name": "Thruster 9", "reps": 9, "load": "43kg", "notes": null },
+          { "name": "Pull-up 9", "reps": 9, "load": null, "notes": null }
+        ],
+        "result": { "timeSeconds": null },
+        "progressionKey": "metcon_fran",
+        "scoringNote": "Tiempo total. Benchmark WOD — anotar el tiempo exacto.",
+        "isBenchmarkWOD": true
+      }
+    },
+    {
+      "id": "w1-d4",
+      "dayOfWeek": "thursday",
+      "order": 4,
+      "name": "Fuerza Posterior + Grip",
+      "focus": ["deadlift", "tracción", "grip"],
+      "estimatedMinutes": 70,
+      "blocks": [
+        {
+          "id": "w1-d4-b1",
+          "type": "strength",
+          "order": 1,
+          "label": "Fuerza Principal",
+          "exercises": [
+            {
+              "id": "w1-d4-e1",
+              "name": "Deadlift",
+              "type": "strength",
+              "isAnchor": true,
+              "targetSets": 4,
+              "targetReps": "4",
+              "targetWeightKg": 120,
+              "targetRPE": 7,
+              "restSeconds": 180,
+              "loadPercent1RM": 75,
+              "notes": "Convencional. Sin cinturón hasta RPE 8.",
+              "progressionKey": "deadlift",
+              "sets": []
+            }
+          ]
+        },
+        {
+          "id": "w1-d4-b2",
+          "type": "strength",
+          "order": 2,
+          "label": "Tracción Superior",
+          "exercises": [
+            {
+              "id": "w1-d4-e2",
+              "name": "Weighted Pull-up",
+              "type": "strength",
+              "isAnchor": true,
+              "targetSets": 4,
+              "targetReps": "5",
+              "targetWeightKg": 15,
+              "targetRPE": 7,
+              "restSeconds": 150,
+              "loadPercent1RM": null,
+              "notes": null,
+              "progressionKey": "weighted_pullup",
+              "sets": []
+            },
+            {
+              "id": "w1-d4-e3",
+              "name": "Barbell Row",
+              "type": "hypertrophy",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "8",
+              "targetWeightKg": 70,
+              "targetRPE": 7,
+              "restSeconds": 90,
+              "loadPercent1RM": null,
+              "notes": "Pronada. Codo a 45°.",
+              "progressionKey": "barbell_row",
+              "sets": []
+            }
+          ]
+        },
+        {
+          "id": "w1-d4-b3",
+          "type": "grip",
+          "order": 3,
+          "label": "Grip + Antebrazo",
+          "exercises": [
+            {
+              "id": "w1-d4-e4",
+              "name": "Bar Hang (supino)",
+              "type": "grip",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "30s",
+              "targetWeightKg": 0,
+              "targetRPE": 7,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "Agarre supino. Registrar segundos.",
+              "progressionKey": "bar_hang_supine",
+              "sets": []
+            },
+            {
+              "id": "w1-d4-e5",
+              "name": "Plate Pinch (2x5kg)",
+              "type": "grip",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "20s",
+              "targetWeightKg": 10,
+              "targetRPE": 8,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "Pinch con pulgar. Registrar segundos.",
+              "progressionKey": "plate_pinch",
+              "sets": []
+            }
+          ]
+        }
+      ],
+      "metcon": {
+        "id": "w1-d4-metcon",
+        "format": "AMRAP",
+        "durationMinutes": 10,
+        "label": "Pull Power",
+        "focusArea": "tracción + resistencia",
+        "movements": [
+          { "name": "Ring Row", "reps": 10, "load": null, "notes": null },
+          { "name": "Farmer Carry (25m)", "reps": 1, "load": "32kg c/u", "notes": null },
+          { "name": "Hollow Hold", "reps": "20s", "load": null, "notes": "Core" }
+        ],
+        "result": { "rounds": null, "partialReps": null },
+        "progressionKey": "metcon_pull_power",
+        "scoringNote": "Rondas + reps parciales."
+      }
+    },
+    {
+      "id": "w1-d5",
+      "dayOfWeek": "friday",
+      "order": 5,
+      "name": "Snatch + Fuerza Superior",
+      "focus": ["snatch", "press", "obliques"],
+      "estimatedMinutes": 75,
+      "blocks": [
+        {
+          "id": "w1-d5-b1",
+          "type": "olympic",
+          "order": 1,
+          "label": "Técnica Olímpica",
+          "exercises": [
+            {
+              "id": "w1-d5-e1",
+              "name": "Power Snatch",
+              "type": "olympic",
+              "isAnchor": true,
+              "targetSets": 5,
+              "targetReps": "3",
+              "targetWeightKg": 50,
+              "targetRPE": 7,
+              "restSeconds": 150,
+              "loadPercent1RM": 65,
+              "notes": "Foco en recepción activa. No perder tensión en overhead.",
+              "progressionKey": "power_snatch",
+              "sets": []
+            }
+          ]
+        },
+        {
+          "id": "w1-d5-b2",
+          "type": "strength",
+          "order": 2,
+          "label": "Empuje + Zona Media",
+          "exercises": [
+            {
+              "id": "w1-d5-e2",
+              "name": "Push Press",
+              "type": "strength",
+              "isAnchor": false,
+              "targetSets": 4,
+              "targetReps": "5",
+              "targetWeightKg": 65,
+              "targetRPE": 7,
+              "restSeconds": 120,
+              "loadPercent1RM": null,
+              "notes": null,
+              "progressionKey": "push_press",
+              "sets": []
+            },
+            {
+              "id": "w1-d5-e3",
+              "name": "Side Plank con rotación",
+              "type": "accessory",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "12",
+              "targetWeightKg": 0,
+              "targetRPE": 8,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "Obliques prioritarios. Debilidad identificada.",
+              "progressionKey": "side_plank_rotation",
+              "sets": []
+            },
+            {
+              "id": "w1-d5-e4",
+              "name": "Copenhagen Plank",
+              "type": "accessory",
+              "isAnchor": false,
+              "targetSets": 3,
+              "targetReps": "20s",
+              "targetWeightKg": 0,
+              "targetRPE": 8,
+              "restSeconds": 60,
+              "loadPercent1RM": null,
+              "notes": "Aductor + oblique. Semana 1: 20s c/lado.",
+              "progressionKey": "copenhagen_plank",
+              "sets": []
+            }
+          ]
+        }
+      ],
+      "metcon": {
+        "id": "w1-d5-metcon",
+        "format": "EMOM",
+        "durationMinutes": 12,
+        "label": "Snatch EMOM",
+        "focusArea": "potencia olímpica",
+        "movements": [
+          { "name": "Power Snatch", "reps": 2, "load": "45kg", "notes": "Técnica > velocidad" },
+          { "name": "Overhead Squat", "reps": 3, "load": "45kg", "notes": "Control en fondo" }
+        ],
+        "result": { "completedMinutes": null, "totalMinutes": 12 },
+        "progressionKey": "metcon_snatch_emom",
+        "scoringNote": "Minutos completados con técnica limpia."
+      }
+    }
+  ]
+}
