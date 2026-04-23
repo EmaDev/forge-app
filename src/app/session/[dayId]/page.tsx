@@ -8,9 +8,11 @@ import { MetconCard } from '@/components/session/MetconCard'
 import { RestTimer } from '@/components/session/RestTimer'
 import { ProgressRing } from '@/components/ui/ProgressRing'
 import { getDayName } from '@/lib/utils'
-import { saveSession, updateStreak, getStreak, savePR } from '@/lib/firebase'
-import { useState } from 'react'
+import { saveSession, updateStreak, getStreak, savePR, getSessionByDayId } from '@/lib/firebase'
+import { useState, useEffect } from 'react'
 import type { SetInput } from '@/hooks/useSession'
+import type { SessionRecord } from '@/hooks/useSessions'
+import { CompletedSessionView } from '@/components/session/CompletedSessionView'
 
 export default function SessionPage() {
   const params = useParams()
@@ -33,6 +35,23 @@ export default function SessionPage() {
 
   const restTimer = useCountdown()
   const [saving, setSaving] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
+  const [checking, setChecking] = useState(true)
+  const [completedSession, setCompletedSession] = useState<SessionRecord | null>(null)
+
+  useEffect(() => {
+    if (loading) return
+    if (!day) {
+      setChecking(false)
+      return
+    }
+    getSessionByDayId(day.id)
+      .then(s => {
+        setCompletedSession(s as SessionRecord | null)
+        setChecking(false)
+      })
+      .catch(() => setChecking(false))
+  }, [day?.id, loading])
 
   function handleCompleteSet(exerciseId: string, setIndex: number, progressionKey: string, restSeconds: number) {
     completeSet(exerciseId, setIndex, progressionKey)
@@ -93,14 +112,42 @@ export default function SessionPage() {
       router.push('/')
     } catch (err) {
       console.error(err)
+      const msg = err instanceof Error ? err.message : 'Error desconocido'
+      setSaveError(msg.includes('permission') ? 'Sin permisos en Firestore. Revisa las reglas de seguridad.' : `Error al guardar: ${msg}`)
       setSaving(false)
     }
   }
 
-  if (loading) {
+  if (loading || checking) {
     return (
       <div className="min-h-screen bg-forge-bg flex items-center justify-center">
         <span className="text-forge-muted font-mono text-sm animate-pulse">CARGANDO...</span>
+      </div>
+    )
+  }
+
+  if (completedSession && day) {
+    return (
+      <div className="min-h-screen bg-forge-bg flex flex-col">
+        <header className="sticky top-0 z-10 bg-forge-bg/95 backdrop-blur-sm border-b border-forge-border px-4 py-3">
+          <div className="flex items-center gap-3 max-w-lg mx-auto">
+            <button
+              onClick={() => router.back()}
+              className="text-forge-muted font-mono text-sm hover:text-forge-text transition-colors"
+            >
+              ←
+            </button>
+            <div className="flex-1 min-w-0">
+              <p className="text-forge-muted font-mono text-[10px] uppercase tracking-widest">
+                SEMANA {week?.number}
+              </p>
+              <h1 className="text-forge-text font-semibold text-sm truncate">{day.name}</h1>
+            </div>
+          </div>
+        </header>
+        <main className="flex-1 px-4 py-4 pb-10 max-w-lg mx-auto w-full">
+          <CompletedSessionView day={day} session={completedSession} />
+        </main>
       </div>
     )
   }
@@ -194,6 +241,9 @@ export default function SessionPage() {
           >
             {saving ? 'GUARDANDO...' : 'COMPLETAR SESIÓN'}
           </button>
+          {saveError && (
+            <p className="text-forge-red font-mono text-[11px] text-center mt-2">{saveError}</p>
+          )}
         </div>
       </div>
 

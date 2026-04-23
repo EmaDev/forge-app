@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { getWeek, getAIAnalysis } from '@/lib/firebase'
+import { getWeek, getAIAnalysis, saveWeek } from '@/lib/firebase'
 import week1Fallback from '@/data/week1.json'
 import type { Week, AIAnalysis } from '@/types/program'
 
@@ -17,6 +17,9 @@ export function useProgram(weekNumber: number = 1) {
           getWeek(weekNumber),
           getAIAnalysis(weekNumber),
         ])
+        if (!weekData) {
+          saveWeek(weekNumber, week1Fallback).catch(() => {})
+        }
         setWeek(weekData ? (weekData as Week) : (week1Fallback as unknown as Week))
         setAiAnalysis(analysisData ? (analysisData as AIAnalysis) : null)
       } catch {

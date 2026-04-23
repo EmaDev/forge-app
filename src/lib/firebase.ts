@@ -1,5 +1,5 @@
 import { initializeApp, getApps } from 'firebase/app'
-import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, where, limit } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -56,6 +56,13 @@ export const getPRs = async () => {
 
 export const saveAIAnalysis = async (weekNumber: number, analysis: unknown) => {
   await setDoc(doc(db, 'ai_analysis', `week-${weekNumber}`), analysis)
+}
+
+export const getSessionByDayId = async (dayId: string) => {
+  const snap = await getDocs(query(collection(db, 'sessions'), where('dayId', '==', dayId), limit(1)))
+  if (snap.empty) return null
+  const d = snap.docs[0]
+  return { id: d.id, ...d.data() }
 }
 
 export const getAIAnalysis = async (weekNumber: number) => {
